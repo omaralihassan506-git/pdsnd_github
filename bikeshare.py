@@ -191,7 +191,7 @@ def popular_trip(df):
     trip_counts = df.groupby(['Start Station', 'End Station'])['Start Time'].count()
     sorted_trip_stations = trip_counts.sort_values(ascending=False)
     total_trips = df['Start Station'].count()
-    return "Most popular trip: " + "\n  Start station: " + str(sorted_trip_stations.index[0][0]) + "\n  End station: " + str(sorted_trip_stations.index[0][1]) + "\n  (" + str(sorted_trip_stations[0]) +  " trips, " + '{0:.2f}%'.format(((sorted_trip_stations[0]/total_trips) * 100)) + " of trips)"
+    return "Most popular trip: " + "\n  Start station: {}".format(sorted_trip_stations.index[0][0]) + "\n  End station: {}".format(sorted_trip_stations.index[0][1]) + "\n  (" + str(sorted_trip_stations[0]) +  " trips, " + '{0:.2f}%'.format(((sorted_trip_stations[0]/total_trips) * 100)) + " of trips)"
 
 
 def users(df):
