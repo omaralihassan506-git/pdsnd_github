@@ -262,7 +262,7 @@ def display_data(df, current_line):
         print(df.iloc[current_line:current_line+5])
         current_line += 5
         return display_data(df, current_line)
-    if display == 'no' or display == 'n':
+    elif display == 'no' or display == 'n':
         return
     else:
         print("\nI'm sorry, I'm not sure if you wanted to see more data or not. Let's try again.")
